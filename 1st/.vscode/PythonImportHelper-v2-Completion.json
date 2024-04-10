@@ -1,0 +1,137 @@
+[
+    {
+        "label": "conditioner",
+        "kind": 2,
+        "importPath": "A",
+        "description": "A",
+        "peekOfCode": "def conditioner(troom, tcond, mode):\n    if mode == 'freeze':\n        return min(troom, tcond)\n    elif mode == 'heat':\n        return max(troom, tcond)\n    elif mode == 'auto':\n        return tcond if troom != tcond else troom\n    elif mode == 'fan':\n        return troom\ntroom, tcond = map(int, input().split())",
+        "detail": "A",
+        "documentation": {}
+    },
+    {
+        "label": "mode",
+        "kind": 5,
+        "importPath": "A",
+        "description": "A",
+        "peekOfCode": "mode = input().strip()\nresult_temperature = conditioner(troom, tcond, mode)\nprint(result_temperature)",
+        "detail": "A",
+        "documentation": {}
+    },
+    {
+        "label": "result_temperature",
+        "kind": 5,
+        "importPath": "A",
+        "description": "A",
+        "peekOfCode": "result_temperature = conditioner(troom, tcond, mode)\nprint(result_temperature)",
+        "detail": "A",
+        "documentation": {}
+    },
+    {
+        "label": "triangle",
+        "kind": 2,
+        "importPath": "B",
+        "description": "B",
+        "peekOfCode": "def triangle(a, b, c):\n    if a >= (b+c) or b >= (a+c) or c >= (a+b):\n        return 'NO'\n    else:\n        return 'YES'\na = int(input())\nb = int(input())\nc = int(input())\nprint(triangle(a, b, c))",
+        "detail": "B",
+        "documentation": {}
+    },
+    {
+        "label": "a",
+        "kind": 5,
+        "importPath": "B",
+        "description": "B",
+        "peekOfCode": "a = int(input())\nb = int(input())\nc = int(input())\nprint(triangle(a, b, c))",
+        "detail": "B",
+        "documentation": {}
+    },
+    {
+        "label": "b",
+        "kind": 5,
+        "importPath": "B",
+        "description": "B",
+        "peekOfCode": "b = int(input())\nc = int(input())\nprint(triangle(a, b, c))",
+        "detail": "B",
+        "documentation": {}
+    },
+    {
+        "label": "c",
+        "kind": 5,
+        "importPath": "B",
+        "description": "B",
+        "peekOfCode": "c = int(input())\nprint(triangle(a, b, c))",
+        "detail": "B",
+        "documentation": {}
+    },
+    {
+        "label": "telephone_number",
+        "kind": 2,
+        "importPath": "C",
+        "description": "C",
+        "peekOfCode": "def telephone_number(numbers):\n    cleaned_numbers = []\n    for number in numbers:\n        cleaned_number = (\n            number.replace('-', '')\n                  .replace('+', '')\n                  .replace(' ', '')\n                  .replace('(', '')\n                  .replace(')', '')\n        )",
+        "detail": "C",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "C",
+        "description": "C",
+        "peekOfCode": "numbers = [input() for _ in range(4)]\nfor result in telephone_number(numbers):\n    print(result)",
+        "detail": "C",
+        "documentation": {}
+    },
+    {
+        "label": "square",
+        "kind": 2,
+        "importPath": "D",
+        "description": "D",
+        "peekOfCode": "def square(a, b, c):\n    if c < 0:\n        return 'NO SOLUTION'\n    elif a == 0:\n        if c ** 2 == b:\n            return 'MANY SOLUTIONS'\n        else:\n            return 'NO SOLUTION'\n    else:\n        x = (c**2 - b) / a",
+        "detail": "D",
+        "documentation": {}
+    },
+    {
+        "label": "notebook",
+        "kind": 2,
+        "importPath": "F",
+        "description": "F",
+        "peekOfCode": "def notebook(a, b, c, d):\n    dimensions = [\n        (max(a, c), b + d),\n        (max(a, d), b + c),\n        (a + c, max(b, d)),\n        (a + d, max(b, c)),\n        (max(b, d), a + c),\n        (max(b, c), a + d),\n        (b + c, max(a, d)),\n        (b + d, max(a, c))",
+        "detail": "F",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_details",
+        "kind": 2,
+        "importPath": "G",
+        "description": "G",
+        "peekOfCode": "def calculate_details(n, k, m):\n    units_per_k = k // m\n    if units_per_k == 0:\n        return 0\n    units_per_k_weight = units_per_k * m\n    details_count = 0\n    while n >= k:\n        workpieces = n // k\n        n -= workpieces * units_per_k_weight\n        details_count += workpieces * units_per_k",
+        "detail": "G",
+        "documentation": {}
+    },
+    {
+        "label": "platforms",
+        "kind": 2,
+        "importPath": "H",
+        "description": "H",
+        "peekOfCode": "def platforms(a, b, m, n):\n    min_a_time = m + (m - 1) * a\n    max_a_time = m + (m + 1) * a\n    min_b_time = n + (n - 1) * b\n    max_b_time = n + (n + 1) * b\n    left = max(min_a_time, min_b_time)\n    right = min(max_a_time, max_b_time)\n    if left > right:\n        return -1\n    return ' '.join(map(str, [left, right]))",
+        "detail": "H",
+        "documentation": {}
+    },
+    {
+        "label": "if_castle",
+        "kind": 2,
+        "importPath": "I",
+        "description": "I",
+        "peekOfCode": "def if_castle(a, b, c, d, e):\n    brick_sides = [a, b, c]\n    hole_sides = [d, e]\n    brick_sides.sort()\n    hole_sides.sort()\n    if brick_sides[0] <= hole_sides[0] and brick_sides[1] <= hole_sides[1]:\n        return 'YES'\n    else:\n        return 'NO'\na, b, c, d, e = [int(input()) for _ in range(5)]",
+        "detail": "I",
+        "documentation": {}
+    },
+    {
+        "label": "double_line",
+        "kind": 2,
+        "importPath": "J",
+        "description": "J",
+        "peekOfCode": "def double_line(a, b, c, d, e, f):\n    y = (a * f - e * c) / (d * a - b * c)\n    x = (e - b * y) / a\n    return (x, y)\na, b, c, d, e, f = [int(input()) for _ in range(6)]\nprint(double_line(a, b, c, d, e, f))",
+        "detail": "J",
+        "documentation": {}
+    }
+]
